@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_telegram_config_default,access_telegram_config_default,model_telegram_config,,0,0,0,0
+access_telegram_config_public,access_telegram_config_public,model_telegram_config,base.group_public,0,0,0,0
+access_telegram_config_portal,access_telegram_config_portal,model_telegram_config,base.group_portal,1,1,1,1
+access_telegram_config_user,access_telegram_config_user,model_telegram_config,base.group_user,1,1,1,1

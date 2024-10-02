@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_sales_leaders_website_tree" model="ir.ui.view">
+        <field name="name">sales.leaders.website.tree</field>
+        <field name="model">sales.leaders</field>
+        <field name="arch" type="xml">
+            <tree string="Лідери продажів">
+                <!-- <field name="sequence" widget="handle"/> -->
+                <field name="block_name"/>
+                <field name="image" widget="image"/>
+                <!-- <field name="image" widget="image" options="{'size': [48, 48]}" width="50" invisible="number_selection != '1' and number_selection != '2'"/> -->
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_sales_leaders_website_form" model="ir.ui.view">
+        <field name="name">sales.leaders.website.form</field>
+        <field name="model">sales.leaders</field>
+        <field name="arch" type="xml">
+            <form string="Лідери продажів">
+                <sheet>
+                    <group>
+                        <field name="block_name"/>
+                        <field name="image" widget="image"/>
+                        <field name="link_for_block"/>
+                        <field name="product_ids" widget="many2many_tags"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <menuitem id="menu_sales_leaders_website" name="Лідери продажів" parent="website_sale.menu_orders"/>
+
+    <record id="action_sales_leaders_website" model="ir.actions.act_window">
+        <field name="name">Блоки для лідерів продажів</field>
+        <field name="res_model">sales.leaders</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_sales_leaders_website_action" name="Лідери продажів" parent="menu_sales_leaders_website" action="action_sales_leaders_website"/>
+</odoo> 

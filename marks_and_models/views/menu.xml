@@ -1,0 +1,34 @@
+<odoo>
+    <record id="action_product_models" model="ir.actions.act_window">
+        <field name="name">Моделі</field>
+        <field name="res_model">product.models</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_models_tree"/>
+    </record>
+
+    <record id="action_product_marks" model="ir.actions.act_window">
+        <field name="name">Марки</field>
+        <field name="res_model">product.marks</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_marks_tree"/>
+    </record>
+
+    <record id="action_product_classes" model="ir.actions.act_window">
+        <field name="name">Класи</field>
+        <field name="res_model">product.classes</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_classes_tree"/>
+    </record>
+
+    <record id="action_product_brands" model="ir.actions.act_window">
+        <field name="name">Бренди</field>
+        <field name="res_model">product.brands</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_brands_tree"/>
+    </record>
+    <menuitem id="menu_product_marks" name="Марки" sequence="4" parent="stock.menu_stock_inventory_control" action="action_product_marks"/>
+    <menuitem id="menu_product_models" name="Моделі" sequence="5" action="action_product_models" parent="stock.menu_stock_inventory_control"/>
+    <menuitem id="menu_product_classes" name="Класи" sequence="6" parent="stock.menu_stock_inventory_control" action="action_product_classes"/>
+    <menuitem id="menu_product_brands" name="Бренди" sequence="7" parent="stock.menu_stock_inventory_control" action="action_product_brands"/>
+
+</odoo>

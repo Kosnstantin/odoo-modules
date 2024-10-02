@@ -1,0 +1,35 @@
+<odoo>
+  <record id="view_product_template_form" model="ir.ui.view">
+    <field name="name">product.template.form.inherit.zip</field>
+    <field name="model">product.template</field>
+    <field name="inherit_id" ref="product.product_template_only_form_view"/>
+    <field name="arch" type="xml">
+      <xpath expr="//page[@name='sales']" position="inside">
+        <group>
+          <div class="oe_button_box" name="button_box">
+            <button name="action_download_all_images" type="object" string="Скачати" class="btn-success oe_stat_button custom-button"/>
+          </div>
+        </group>
+        <group>z
+          <field name="zip_file" filename="zip_filename" widget="binary" options="{'filename': 'zip_filename'}"/>
+          <div class="oe_button_box" name="button_box">
+            <button name="action_upload_images_from_zip" type="object" string="Завантажити зображення із Zip-файлу" class="btn-primary oe_stat_button custom-button"/>
+          </div>
+        </group>
+        <group>
+          <field name="image_files" widget="many2many_binary"/>
+          <div class="oe_button_box" name="button_box">
+            <button name="action_upload_images_from_files" type="object" string="Завантажити вибрані зображення" class="btn-primary oe_stat_button custom-button"/>
+          </div>
+        </group>
+        <separator/>
+        <group>
+          <div class="oe_button_box" name="button_box">
+            <button name="action_delete_all_images" type="object" string="Видалити всі зображення" class="btn-danger oe_stat_button custom-button"/>
+          </div>
+        </group>
+
+      </xpath>
+    </field>
+  </record>
+</odoo>

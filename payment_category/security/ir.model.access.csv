@@ -1,0 +1,17 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+
+access_payment_category_default,access_payment_category_default,model_payment_category,,0,0,0,0
+access_payment_category_public,access_payment_category_public,model_payment_category,base.group_public,0,0,0,0
+access_payment_category_portal,access_payment_category_portal,model_payment_category,base.group_portal,1,1,1,1
+access_payment_category_user,access_payment_category_user,model_payment_category,base.group_user,1,1,1,1
+
+access_account_payment_line_default,access_account_payment_line_default,model_account_payment_line,,0,0,0,0
+access_account_payment_line_public,access_account_payment_line_public,model_account_payment_line,base.group_public,0,0,0,0
+access_account_payment_line_portal,access_account_payment_line_portal,model_account_payment_line,base.group_portal,1,1,1,1
+access_account_payment_line_user,access_account_payment_line_user,model_account_payment_line,base.group_user,1,1,1,1
+
+access_payment_line_type_default,access_payment_line_type_default,model_payment_line_type,,0,0,0,0
+access_payment_line_type_public,access_payment_line_type_public,model_payment_line_type,base.group_public,0,0,0,0
+access_payment_line_type_portal,access_payment_line_type_portal,model_payment_line_type,base.group_portal,1,1,1,1
+access_payment_line_type_user,access_payment_line_type_user,model_payment_line_type,base.group_user,1,1,1,1

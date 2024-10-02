@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <record id="view_product_template_form_price_history" model="ir.ui.view">
+    <field name="name">product.template.form.price.history</field>
+    <field name="model">product.template</field>
+    <field name="inherit_id" ref="product.product_template_only_form_view"/>
+    <field name="arch" type="xml">
+      <xpath expr="//page[@name='sales']" position="before">
+        <page string="Історія зміни цін">
+          <group>
+            <field name="selected_pricelist_id" string="Оберіть прайс-лист"/>
+            <field name="date_from" string="Дата початку"/>
+            <field name="date_to" string="Дата кінця"/>
+          </group>
+          <field name="filtered_price_history_ids" readonly="1">
+            <tree>
+              <field name="date" string="Дата"/>
+              <field name="pricelist_id" string="Прайс-лист"/>
+              <field name="price" string="Цiна"/>
+            </tree>
+          </field>
+        </page>
+      </xpath>
+    </field>
+  </record>
+</odoo>

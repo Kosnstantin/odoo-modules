@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_main_page_website_default,access_main_page_website_default,model_main_page_website,,0,0,0,0
+access_main_page_website_public,access_main_page_website_public,model_main_page_website,base.group_public,0,0,0,0
+access_main_page_website_portal,access_main_page_website_portal,model_main_page_website,base.group_portal,1,1,1,1
+access_main_page_website_user,access_main_page_website_user,model_main_page_website,base.group_user,1,1,1,1
+
+access_sales_leaders_default,access_sales_leaders_default,model_sales_leaders,,0,0,0,0
+access_sales_leaders_public,access_sales_leaders_public,model_sales_leaders,base.group_public,0,0,0,0
+access_sales_leaders_portal,access_sales_leaders_portal,model_sales_leaders,base.group_portal,1,1,1,1
+access_sales_leaders_user,access_sales_leaders_user,model_sales_leaders,base.group_user,1,1,1,1

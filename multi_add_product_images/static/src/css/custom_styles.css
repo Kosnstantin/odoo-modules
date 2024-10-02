@@ -1,0 +1,6 @@
+.custom-button {
+    width: auto;
+    padding: 10px 20px; /* Adjust padding as needed */
+    font-size: 14px; /* Adjust font size as needed */
+    white-space: nowrap; /* Ensure the text does not wrap */
+}

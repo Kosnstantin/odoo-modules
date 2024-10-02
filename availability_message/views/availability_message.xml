@@ -1,0 +1,29 @@
+<odoo>
+  <data>
+      <record id="view_availability_message_tree" model="ir.ui.view">
+          <field name="name">availability.message.tree</field>
+          <field name="model">availability.message</field>
+          <field name="arch" type="xml">
+              <tree string="Availability message">
+                  <field name="partner_ids"/>
+                  <field name="partner_name" />
+                  <field name="product_name" />
+                  <field name="partner_mobile" />
+                  <field name="date_of_query" />
+                  <field name="product_availability" />
+                  <field name="product_from_wishlist" />
+              </tree>
+          </field>
+      </record>
+
+      <record id="action_availability_message" model="ir.actions.act_window">
+          <field name="name">Запит на повідомлення про наявність</field>
+          <field name="res_model">availability.message</field>
+          <field name="view_mode">tree,form</field>
+          <field name="view_id" ref="view_availability_message_tree" />
+      </record>
+
+      <menuitem id="menu_availability_message_tree" name="Запит на повідомлення про наявність" parent="website_sale.menu_orders"
+          action="action_availability_message" sequence="7" />
+  </data>
+</odoo>

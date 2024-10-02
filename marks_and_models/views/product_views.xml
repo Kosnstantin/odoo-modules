@@ -1,0 +1,24 @@
+<odoo>
+  <data>
+    <record id="view_product_template_marks_form_inherit" model="ir.ui.view">
+      <field name="name">product.template.form.inherit.marks</field>
+      <field name="model">product.template</field>
+      <field name="inherit_id" ref="product.product_template_only_form_view" />
+      <field name="arch" type="xml">
+        <xpath expr="//page[@name='sales']" position="after">
+          <page name="marks" string="Марки и Моделі">
+            <group>
+              <field name="mark_ids" widget="many2many_tags" options="{'no_create': False}" />
+            </group>
+            <group>
+              <field name="class_ids" widget="many2many_tags" domain="[('mark_id', 'in', mark_ids)]" options="{'no_create': False}" />
+            </group>
+            <group>
+              <field name="model_ids" widget="many2many_tags" domain="[ '|',  ('class_id', 'in', class_ids),  ('class_id', '=', False), ('mark_id', 'in', mark_ids)]" options="{'no_create': False}" />
+            </group>
+          </page>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>

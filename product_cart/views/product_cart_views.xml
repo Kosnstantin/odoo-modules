@@ -1,0 +1,42 @@
+<odoo>
+    <data>
+        <record id="view_user_cart_tree" model="ir.ui.view">
+            <field name="name">user.cart.tree</field>
+            <field name="model">user.cart</field>
+            <field name="arch" type="xml">
+                <tree string="Product Cart" decoration-success="main_cart == True">
+                    <field name="title" />
+                    <field name="partner_id" />
+                    <field name="total_price" />
+                    <field name="currency_id" />
+                    <field name="main_cart"/>
+                    <field name="active_cart"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_product_cart_tree" model="ir.ui.view">
+            <field name="name">product.cart.tree</field>
+            <field name="model">product.cart</field>
+            <field name="arch" type="xml">
+                <tree string="Product Cart">
+                    <field name="product_id" />
+                    <field name="quantity" />
+                    <field name="price" />
+                    <field name="total_product_price" />
+                    <field name="pricelist_id" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_user_cart" model="ir.actions.act_window">
+            <field name="name">Кошики користувачів</field>
+            <field name="res_model">user.cart</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_user_cart_tree" />
+        </record>
+
+        <menuitem id="menu_user_cart_tree" name="Кошик" parent="website_sale.menu_orders"
+            action="action_user_cart" sequence="5" />
+    </data>
+</odoo>

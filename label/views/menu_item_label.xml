@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <!-- View для просмотра и создания меток через склад -->
+  <record id="view_label_form" model="ir.ui.view">
+    <field name="name">label.form</field>
+    <field name="model">product.label</field>
+    <field name="arch" type="xml">
+      <form string="Лейбли">
+        <sheet>
+          <group>
+            <field name="name"/>
+            <field name="discount"/>
+            <field name="description"/>
+            <field name="color" widget="color"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!-- Дерево для меток -->
+  <record id="view_label_tree" model="ir.ui.view">
+    <field name="name">label.tree</field>
+    <field name="model">product.label</field>
+    <field name="arch" type="xml">
+      <tree string="Лейбли">
+        <field name="name"/>
+        <field name="discount"/>
+      </tree>
+    </field>
+  </record>
+
+  <!-- Действие для доступа к просмотру меток через склад -->
+  <record id="action_label_form" model="ir.actions.act_window">
+    <field name="name">Лейбли</field>
+    <field name="res_model">product.label</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">
+        Створіть перший лейбл.
+      </p>
+    </field>
+  </record>
+
+  <!-- Меню для доступа к просмотру меток через склад -->
+  <!-- <menuitem id="menu_label_form" name="Лейбли" parent="stock.menu_stock_inventory_control" action="action_label_form" sequence="4"/> -->
+  <menuitem id="menu_label_form" name="Лейбли" parent="website_sale.menu_orders" action="action_label_form" sequence="4"/>
+
+</odoo>

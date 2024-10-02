@@ -1,0 +1,52 @@
+<odoo>
+    <record id="view_marks_form" model="ir.ui.view">
+        <field name="name">product.marks.form</field>
+        <field name="model">product.marks</field>
+        <field name="arch" type="xml">
+            <form string="Mark">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="slug"/>
+                        <field name="name_uk"/>
+                        <field name="marks_icon_url"/>
+                        <field name="marks_icon" widget="image" options="{'size': [72, 72]}"/>
+                        <field name="product_id" widget="many2many_tags"/>
+                        <field name="model_ids" widget="many2many_tags">
+                            <tree editable="bottom">
+                                <field name="name"/>
+                            </tree>
+                        </field>
+                        <field name="class_ids" widget="many2many_tags">
+                            <tree editable="bottom">
+                                <field name="name"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_marks_tree" model="ir.ui.view">
+        <field name="name">product.marks.tree</field>
+        <field name="model">product.marks</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="product_id" widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_classes_tree" model="ir.ui.view">
+        <field name="name">product.classes.tree</field>
+        <field name="model">product.classes</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

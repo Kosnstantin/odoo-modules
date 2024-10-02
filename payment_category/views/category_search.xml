@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record id="view_account_payment_search_inherit" model="ir.ui.view">
+            <field name="name">account.payment.search.inherit</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_search" />
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='partner']" position="before">
+                    <filter string="Категорiя платежу" name="category_id" domain="[]" context="{'group_by': 'category_id'}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,56 @@
+<odoo>
+    <menuitem id="payment_lines_menu" name="Призначення плажетів" parent="account.menu_finance_entries" sequence="30"/>
+    <!-- Действие для открытия списка платежных линий -->
+    <record id="action_account_payment_line" model="ir.actions.act_window">
+        <field name="name">Призначення платежiв</field>
+        <field name="res_model">account.payment.line</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'group_by': 'payment_id'}</field>
+        <field name="help" type="html">
+            <p>
+                Тут буде зображено всi призначення платежiв 
+            </p>
+        </field>
+    </record>
+
+    <!-- Определение меню для платежных линий -->
+    <menuitem id="menu_account_payment_line_root" name="Призначення платежiв" parent="payment_lines_menu" sequence="10" action="action_account_payment_line"/>
+
+
+    <!-- Определение формы для записи -->
+    <record id="view_account_payment_line_form" model="ir.ui.view">
+        <field name="name">account.payment.line.form</field>
+        <field name="model">account.payment.line</field>
+        <field name="arch" type="xml">
+            <form string="Призначення платежу">
+                <sheet>
+                    <group>
+                        <field name="name" readonly="True"/>
+                        <field name="comment"/>
+                        <field name="amount" readonly="True"/>
+                        <!-- <field name="percentage" readonly="True"/>
+                        <field name="amount_percentage" readonly="True"/> -->
+                        <field name="payment_id" readonly="True"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Определение списка (tree view) для платежных линий -->
+    <record id="view_account_payment_line_tree" model="ir.ui.view">
+        <field name="name">account.payment.line.tree</field>
+        <field name="model">account.payment.line</field>
+        <field name="arch" type="xml">
+            <tree string="Payment Lines">
+                <field name="name"/>
+                <field name="amount"/>
+                <field name="comment"/>
+                <!-- <field name="percentage"/>
+                <field name="amount_percentage"/> -->
+            </tree>
+        </field>
+    </record>
+
+
+</odoo>

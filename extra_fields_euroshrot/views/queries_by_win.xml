@@ -1,0 +1,41 @@
+<odoo>
+    <record id="view_queries_by_vin_tree" model="ir.ui.view">
+        <field name="name">queries.by.vin</field>
+        <field name="model">queries.by.vin</field>
+        <field name="arch" type="xml">
+            <tree string="Запити">
+                <field name="vin"/>
+                <field name="phone" />
+                <field name="details" />
+                <field name="extra_file" />
+            </tree>
+        </field>
+    </record>
+    <!-- Form view definition -->
+    <record id="view_queries_by_vin_form" model="ir.ui.view">
+        <field name="name">queries.by.vin.form</field>
+        <field name="model">queries.by.vin</field>
+        <field name="arch" type="xml">
+            <form string="Редагування запиту по VIN">
+                <sheet>
+                    <group>
+                        <field name="vin"/>
+                        <field name="phone"/>
+                        <field name="details"/>
+                        <field name="extra_file" widget="binary" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- Action definition -->
+    <record id="action_queries_by_vin" model="ir.actions.act_window">
+        <field name="name">Запити по VIN</field>
+        <field name="res_model">queries.by.vin</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_queries_by_vin_tree" />
+    </record>
+
+    <!-- Menu item definition -->
+    <menuitem id="menu_queries_by_vin_tree" name="Запити по VIN" parent="sale.sale_menu_root" action="action_queries_by_vin" sequence="15" />
+</odoo>

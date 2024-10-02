@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+
+access_queries_by_vin_default,access_queries_by_vin_default,model_queries_by_vin,,0,0,0,0
+access_queries_by_vin_public,access_queries_by_vin_public,model_queries_by_vin,base.group_public,0,0,0,0
+access_queries_by_vin_portal,access_queries_by_vin_portal,model_queries_by_vin,base.group_portal,1,1,1,1
+access_queries_by_vin_user,access_queries_by_vin_user,model_queries_by_vin,base.group_user,1,1,1,1

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="view_main_page_website_tree" model="ir.ui.view">
+    <field name="name">main.page.website.tree</field>
+    <field name="model">main.page.website</field>
+    <field name="arch" type="xml">
+      <tree string="Головна сторiнка сайту">
+        <!-- <field name="sequence" widget="handle"/> -->
+        <field name="block_name"/>
+        <field name="block_type"/>
+        <!-- <field name="image" widget="image" options="{'size': [48, 48]}" width="50" invisible="number_selection != '1' and number_selection != '2'"/> -->
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_main_page_website_form" model="ir.ui.view">
+    <field name="name">main.page.website.form</field>
+    <field name="model">main.page.website</field>
+    <field name="arch" type="xml">
+      <form string="Головна сторiнка сайту">
+        <sheet>
+          <group>
+            <field name="block_type" widget="radio"/>
+            <field name="block_name"/>
+            <field name="price" invisible="block_type != '1'"/>
+            <field name="image_first_type" widget="image" invisible="block_type != '1'"/>
+            <field name="link_for_first_type_block" invisible="block_type != '1'"/>
+            <field name="button_link" invisible="block_type != '2'"/>
+            <field name="bg_image_second_type" widget="image" invisible="block_type != '2'"/>
+            <field name="main_slider_link" invisible="block_type != '3'"/>
+            <field name="main_slide_image_1480x520" widget="image" invisible="block_type != '3'"/>
+            <field name="main_slide_image_1000x520" widget="image" invisible="block_type != '3'"/>
+            <field name="main_slide_image_679x520" widget="image" invisible="block_type != '3'"/>
+            <field name="main_slide_image_449x520" widget="image" invisible="block_type != '3'"/>
+            <field name="page_slider_link" invisible="block_type != '4'"/>
+            <field name="page_slide_image" widget="image" invisible="block_type != '4'"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <menuitem id="menu_main_page_website" name="Головна сторiнка сайту" parent="website_sale.menu_orders"/>
+
+  <record id="action_main_page_website" model="ir.actions.act_window">
+    <field name="name">Блоки для головної сторінки сайту</field>
+    <field name="res_model">main.page.website</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <menuitem id="menu_main_page_website_action" name="Головна сторiнка сайту" parent="menu_main_page_website" action="action_main_page_website"/>
+</odoo> 

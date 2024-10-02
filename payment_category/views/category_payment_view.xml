@@ -1,0 +1,41 @@
+<odoo>
+    <data>
+        <!-- Определение представления списка для категорий платежей -->
+        <record id="view_payment_category_tree" model="ir.ui.view">
+            <field name="name">payment.category.tree</field>
+            <field name="model">payment.category</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Определение представления формы для категорий платежей -->
+        <record id="view_payment_category_form" model="ir.ui.view">
+            <field name="name">payment.category.form</field>
+            <field name="model">payment.category</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- Создание нового пункта меню для категорий платежей -->
+        <menuitem id="payment_category_menu" name="Категорії плажетів" parent="account.menu_finance_entries" sequence="20"/>
+
+        <!-- Создание действия для отображения категорий платежей -->
+        <record id="action_payment_category" model="ir.actions.act_window">
+            <field name="name">Категорії плажетів</field>
+            <field name="res_model">payment.category</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Привязка действия к пункту меню -->
+        <menuitem id="payment_category_action_menu" name="Категорії плажетів" parent="payment_category_menu" action="action_payment_category" sequence="10"/>
+    </data>
+</odoo>
